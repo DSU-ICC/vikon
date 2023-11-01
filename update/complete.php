@@ -4,17 +4,10 @@ require_once  $selfDir . '/config.php';
 
 $res['success'] = false;
 
-if (empty($_POST['access_token']) && !empty($_GET['access_token'])) { //переходный момент - можно удалить после 01.07.2023
-    $token = filterAccessToken($_GET['access_token']);
-}
-if (empty($token)) { //и условие
-    $token = filterAccessToken($_POST['access_token']);
-}
-
 try {
     $headers = array(
         'Accept: application/json',
-        'Authorization: Bearer ' . $token,
+        'Authorization: Bearer ' . $token = filterAccessToken($_POST['access_token']),
     );
 
     $response = remoteRequest($apiDomen . 'pull_updates/assist/updateEndedSuccessJson', true, array(), $headers);

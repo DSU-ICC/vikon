@@ -27,8 +27,7 @@ try {
         die();
     }
     $serverVersion = $versionResp->responseBody->version;
-    //todo next удалить use_new_route и его использование после 01.07.2023
-    $createZipResp = remoteRequest($apiDomen . 'update/get?&d=' . $domenName . '&use_new_route=1&access_token=' . $token);
+    $createZipResp = remoteRequest($apiDomen . 'update/get?&d=' . $domenName . '&access_token=' . $token);
 
     if ($createZipResp->curlHasError) {
         throw new RuntimeException('CURL ' . $createZipResp->curlErrorTxt);
