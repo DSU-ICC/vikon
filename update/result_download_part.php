@@ -49,6 +49,8 @@ try {
                 if (!file_exists($abiturPath)) {
                     mkdir($abiturPath, 0775);
                 } else {
+                    $profileDir = $abiturPath .'/profile';
+                    removeDirectory($profileDir);
                     $removeAbiturFiles = explode(';', $removeAbiturFiles);
                     foreach ($removeAbiturFiles as $file) {
                         $filePath = $abiturPath . '/' . $file;

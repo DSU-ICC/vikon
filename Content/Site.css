@@ -663,7 +663,7 @@ td a {
 }
 
 .page__list li:last-child {
-    grid-column: span 3;
+    grid-column: span 2;
 }
 
 .page-item__img {
@@ -687,9 +687,9 @@ td a {
     font-weight: 500;
 }
 
-@media (max-width: 1624px) {
+@media (max-width: 1653px) {
     .page__list li:last-child {
-        grid-column: span 2;
+        grid-column: span 3;
     }
 }
 

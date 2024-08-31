@@ -99,31 +99,6 @@ $assetsCommonDir = (!empty($GLOBALS['VIKON_PATH']))
                                 </li>
                             <?php } ?>
                         </ul>
-                        <b>Синхронизация файлов:</b>
-                        <ul>
-                            <li>
-                                <div class="checkbox">
-                                    <input type="checkbox" name="sync" id="sync" value="sync" checked>
-                                    <label for="sync">Синхронизировать файлы</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="count-files">
-                                    <select class="form-control select-count-files" name="count-files-in-batch">
-                                        <?php
-                                        $minCountFilesInBatch = 1;
-                                        for ($counFilesInBatch = 5; $counFilesInBatch >= $minCountFilesInBatch; $counFilesInBatch--) { ?>
-                                            <option value="<?php echo $counFilesInBatch; ?>">
-                                                <?php echo $counFilesInBatch; ?>
-                                            </option>
-                                        <?php } ?>
-                                    </select>
-                                    Максимальное количество файлов в пакете обновлений
-                                    <span class="glyphicon glyphicon-question-sign text-info"
-                                          title="Рекомендуется уменьшить в случае возникновения ошибок получения файлов"></span>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                     <div class="form-group hide admin-mode-panel" id="admin-mode-panel">
                         <b>Дополнительные опции для администратора:</b>

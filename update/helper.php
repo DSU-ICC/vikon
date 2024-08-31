@@ -308,3 +308,27 @@
         curl_close($ch);
         return $result;
     }
+
+    function tryExtractFmErrorMessage($remoteResultFmWhereBodyIsJson, $prefix = '')
+    {
+        $out = '';
+        if (property_exists($remoteResultFmWhereBodyIsJson->responseBody, 'error')) {
+            $out = $out . $remoteResultFmWhereBodyIsJson->responseBody->error;
+        }
+
+        if (
+            property_exists($remoteResultFmWhereBodyIsJson->responseBody, 'messages')
+            && is_array($remoteResultFmWhereBodyIsJson->responseBody->messages)
+        ) {
+            $message = version_compare(phpversion(), '8.0', '>=')
+                ? implode('; ', $remoteResultFmWhereBodyIsJson->responseBody->messages)
+                : implode($remoteResultFmWhereBodyIsJson->responseBody->messages, '; ');
+            $out = $out . $message;
+        }
+
+        if ($out) {
+            $out = $prefix . 'Файловый сервер: ' . $out;
+        }
+
+        return $out;
+    }
