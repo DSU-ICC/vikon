@@ -141,10 +141,6 @@ main {
     color: #212931;
 }
 
-.footer__container {
-    padding: 0;
-}
-
 .footer__inner {
     width: 100%;
     display: flex;
@@ -541,10 +537,9 @@ body {
     color: #212931;
 }
 
-.footer {
-    margin: 20px 0;
+.footer__container {
+    padding: 0 !important;
 }
-
 
 .footer__inner {  
     display: flex;
@@ -695,7 +690,7 @@ td a {
 
 @media (max-width: 1217px) {
     .page__list li:last-child {
-        grid-column: span 1;
+        grid-column: span 2;
     }    
 }
 
