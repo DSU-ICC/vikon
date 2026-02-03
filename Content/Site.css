@@ -530,6 +530,15 @@ body {
 .logo {
     width: 301px;
     height: 88px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo__img {
+    width: 88px;
+    height: 100%;
+    flex-shrink: 0;
 }
 
 .logo__text {
@@ -550,8 +559,8 @@ body {
     border-radius: 10px;
 }
 
-.footer .logo img {
-    height: 100%;
+.footer__inner .logo__text {
+    color: #fff;
 }
 
 .footer__text {
